@@ -1,5 +1,6 @@
 package com.dh.ClinicaMVC;
 
+import com.dh.ClinicaMVC.dao.DB;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ClinicaMvcApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ClinicaMvcApplication.class, args);
+
+        DB.createTables();
+
+        SpringApplication.run(ClinicaMvcApplication.class, args);
 	}
 
 }
