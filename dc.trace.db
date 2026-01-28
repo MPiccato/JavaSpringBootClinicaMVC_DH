@@ -95,3 +95,7 @@ SELECT * FROM PATIENTS WHERE EMAIL = ? [42102-232]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PATIENTS" no encontrada
 Table "PATIENTS" not found; SQL statement:
 SELECT * FROM PATIENTS WHERE EMAIL = ? [42102-232]
+2026-01-27 21:55:13.621016-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PATIENTS" no encontrada
+Table "PATIENTS" not found; SQL statement:
+UPDATE PATIENTS SET NAME = ?, LAST_NAME = ?, CARD_IDENTITY = ?, ADMISSION_OF_DATE = ?, ADDRESS_ID = ? WHERE ID = ? [42102-232]
