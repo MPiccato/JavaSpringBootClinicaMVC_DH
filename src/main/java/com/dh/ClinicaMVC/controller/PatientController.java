@@ -2,6 +2,7 @@ package com.dh.ClinicaMVC.controller;
 
 import com.dh.ClinicaMVC.model.Patient;
 import com.dh.ClinicaMVC.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +15,13 @@ public class PatientController {
 
     private PatientService patientService;
 
-    //Constructor del Controller
-    public PatientController() {
-        this.patientService = new PatientService();
+    @Autowired
+    public PatientController(PatientService patientService) {
+        this.patientService = patientService;
     }
+
+
+
 
     @GetMapping
     public String findPatientByEmail(Model model, @RequestParam("email") String email) {

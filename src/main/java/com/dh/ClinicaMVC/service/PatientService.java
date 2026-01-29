@@ -3,6 +3,7 @@ package com.dh.ClinicaMVC.service;
 import com.dh.ClinicaMVC.dao.IDao;
 import com.dh.ClinicaMVC.dao.PatientDaoH2;
 import com.dh.ClinicaMVC.model.Patient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,10 +13,10 @@ public class PatientService {
 
     private IDao<Patient> patientIDao;
 
-    public PatientService() {
-        this.patientIDao = new PatientDaoH2();
+    @Autowired
+    public PatientService(PatientDaoH2 patientIDao) {
+        this.patientIDao = patientIDao;
     }
-
     public Patient save(Patient patient){
         return patientIDao.save(patient);
     }

@@ -3,6 +3,7 @@ package com.dh.ClinicaMVC.service;
 import com.dh.ClinicaMVC.dao.AppointmentDao;
 import com.dh.ClinicaMVC.dao.IDao;
 import com.dh.ClinicaMVC.model.Appoinment;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,10 +14,10 @@ public class AppointmentService {
 
     private IDao<Appoinment> appoinmentIDao;
 
-    public AppointmentService() {
-        this.appoinmentIDao = new AppointmentDao();
+    @Autowired
+    public AppointmentService(AppointmentDao appoinmentIDao) {
+        this.appoinmentIDao = appoinmentIDao;
     }
-
     public Appoinment saveAppoinment(Appoinment appoinment) {
         return appoinmentIDao.save(appoinment);
     }

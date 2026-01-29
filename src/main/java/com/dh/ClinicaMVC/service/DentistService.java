@@ -3,6 +3,7 @@ package com.dh.ClinicaMVC.service;
 import com.dh.ClinicaMVC.dao.DentistDaoH2;
 import com.dh.ClinicaMVC.dao.IDao;
 import com.dh.ClinicaMVC.model.Dentist;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
@@ -13,8 +14,9 @@ public class DentistService {
 
     private IDao<Dentist> dentistIDao;
 
-    public DentistService() {
-        this.dentistIDao = new DentistDaoH2();
+   @Autowired
+    public DentistService(DentistDaoH2 dentistIDao) {
+        this.dentistIDao = dentistIDao;
     }
 
     public Dentist saveDentist(Dentist dentist){

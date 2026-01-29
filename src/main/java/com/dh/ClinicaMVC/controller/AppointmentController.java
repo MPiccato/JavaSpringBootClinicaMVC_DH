@@ -4,6 +4,7 @@ import com.dh.ClinicaMVC.model.Appoinment;
 import com.dh.ClinicaMVC.service.AppointmentService;
 import com.dh.ClinicaMVC.service.DentistService;
 import com.dh.ClinicaMVC.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,7 @@ public class AppointmentController {
 
     private PatientService patientService;
 
+    @Autowired
     public AppointmentController(AppointmentService appointmentService, DentistService dentistService, PatientService patientService) {
         this.appointmentService = appointmentService;
         this.dentistService = dentistService;

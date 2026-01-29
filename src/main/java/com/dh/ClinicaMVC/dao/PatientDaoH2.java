@@ -1,12 +1,14 @@
 package com.dh.ClinicaMVC.dao;
 
 import com.dh.ClinicaMVC.model.Patient;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+@Component
 public class PatientDaoH2 implements  IDao<Patient>{
 
     private static final String SQL_INSERT_PATIENT = "INSERT INTO PATIENT " +

@@ -2,6 +2,7 @@ package com.dh.ClinicaMVC.dao;
 
 import com.dh.ClinicaMVC.model.Dentist;
 import com.dh.ClinicaMVC.model.Patient;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class DentistDaoH2 implements IDao<Dentist> {
 
     private static final String SQL_INSERT_DENTIST = "INSERT INTO DENTIST (REGISTRATION, NAME, LAST_NAME) VALUES (?, ?, ?)";

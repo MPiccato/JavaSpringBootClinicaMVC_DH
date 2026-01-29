@@ -1,10 +1,12 @@
 package com.dh.ClinicaMVC.dao;
 
 import com.dh.ClinicaMVC.model.Appoinment;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class AppointmentDao implements  IDao<Appoinment> {
 
     private List<Appoinment> appoinments;
