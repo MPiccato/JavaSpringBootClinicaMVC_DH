@@ -5,6 +5,8 @@ import com.dh.ClinicaMVC.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/patients")
 public class PatientRestController {
@@ -25,4 +27,10 @@ public class PatientRestController {
     public void  actualizarPaciente(@RequestBody Patient patient) {
         patientService.update(patient);
     }
+
+    @GetMapping("/all")
+    public List<Patient> obtenerTodosLosPacientes() {
+        return patientService.findAll();
+    }
+
 }
